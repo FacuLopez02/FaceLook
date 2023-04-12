@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'FaceLook.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'faceloook_db',
+        'NAME': 'facelook_db',
         'USER': 'postgres',
         'PASSWORD' : '1234',
         'HOST' : 'localhost',
