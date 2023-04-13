@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -11,9 +11,6 @@ def tienda(request):
 
     return render(request,'FaceLookApp/tienda.html')
 
-def blog(request):
-
-    return render(request,'FaceLookApp/blog.html')
 
 def contacto(request):
 
