@@ -4,7 +4,16 @@
 
 {% block content %}
 
+    {% if "valido" in request.GET %}
+        <div class = "formsContacto" align=center>
+            <p style="color: white; width:50%; margin: 20px auto" align=center> Informacion enviada correctamente!!</p>
+        </div>
+    {% else %}
+
     <div class = "formsContacto">
+
+        
+
         <form action="" method="POST" style="text-align: center">
             {% csrf_token %%}
             <table style="color:white; margin: 20px auto">{{formulario.as_table}}</table>
@@ -13,5 +22,7 @@
 
         </form>
     </div>
+
+    {% endif %}
 
 {% endblock %}
