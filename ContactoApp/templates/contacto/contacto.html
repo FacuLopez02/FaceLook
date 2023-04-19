@@ -3,7 +3,15 @@
 {% load static %}
 
 {% block content %}
-    <p>
-    <div style="text-align:center; color:white;"><p>{{formulario}}</p></div>
+
+    <div class = "formsContacto">
+        <form action="" method="POST" style="text-align: center">
+            {% csrf_token %%}
+            <table style="color:white; margin: 20px auto">{{formulario.as_table}}</table>
+        
+            <input type="submit" value="Enviar" style="width:150px">
+
+        </form>
+    </div>
 
 {% endblock %}
