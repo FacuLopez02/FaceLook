@@ -11,7 +11,3 @@ def tienda(request):
 
     return render(request,'FaceLookApp/tienda.html')
 
-
-def contacto(request):
-
-    return render(request,'FaceLookApp/contacto.html')
