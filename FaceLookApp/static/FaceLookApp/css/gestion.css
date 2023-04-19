@@ -288,3 +288,13 @@ ul.errorlist{
   text-decoration: none;
 
 }
+
+.formsContacto{
+
+  background-color: rgba(104, 20, 20);
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 1% 0%;
+
+}
