@@ -5,9 +5,3 @@ from django.shortcuts import render
 def home(request):
 
     return render(request,'FaceLookApp/home.html')
-
-
-def tienda(request):
-
-    return render(request,'FaceLookApp/tienda.html')
-
