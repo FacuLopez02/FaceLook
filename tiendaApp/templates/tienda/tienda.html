@@ -8,7 +8,7 @@
 
     <div style="float: right">
 
-        <p style="background-color: black; color:white">Hola
+        {% include "carro/widget.html" %}
 
     </div>
 
@@ -32,7 +32,7 @@
 
                     <div class ="card-footer" style = "text-align: center">
 
-                        <a href="#" class="btn btn-success">Agregar al carro</a>
+                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
 
                     </div>
 
