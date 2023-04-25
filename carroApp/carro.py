@@ -10,8 +10,8 @@ class Carro:
         if not carro:
             carro = self.session["carro"]={}
         
-        else:
-            self.carro = carro
+        
+        self.carro = carro
             
     def agregar(self, producto):
         
