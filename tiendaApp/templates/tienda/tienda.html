@@ -6,6 +6,12 @@
 
 <div class="container">
 
+    <div style="float: right">
+
+        <p style="background-color: black; color:white">Hola
+
+    </div>
+
     <div class="row">
 
         {% for producto in productos %}
@@ -21,6 +27,12 @@
 
                         <h7 class="card-title">{{producto.nombre}}</h7>
                         <p class="card-text">$&nbsp;{{producto.precio}}
+
+                    </div>
+
+                    <div class ="card-footer" style = "text-align: center">
+
+                        <a href="#" class="btn btn-success">Agregar al carro</a>
 
                     </div>
 
