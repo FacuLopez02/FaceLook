@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'ContactoApp',
     'tiendaApp',
     'carroApp',
+    'autenticacionApp',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +146,6 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'fl492279@gmail.com'
 EMAIL_HOST_PASSWORD = 'fslbzgrihzdvozdr'
+
+# Configuracion para cargar crispy en bootstrap
+CRISPY_TEMPLATE_PACK='bootstrap4'
