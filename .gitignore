@@ -1,3 +1,4 @@
-pychache/
-*.png
-*.jpeg
+**/__pycache__/**
+**/*.png
+**/*.jpeg
+**/*.jpg
