@@ -6,10 +6,16 @@
 
 <div class="container">
 
-    <div style="float: right">
+    <div style="float: right; margin: 1% 1%;">
 
-        {% include "carro/widget.html" %}
+        {% if request.user.is_authenticated %}
 
+            {% include "carro/widget.html" %}
+
+        {% else %}
+            {% include "carro/widget_error.html" %}
+        {% endif %}
+        
     </div>
 
     <div class="row">
