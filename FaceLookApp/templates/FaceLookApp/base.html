@@ -20,26 +20,26 @@
 
 <body>
 
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
+  <h1 class="site-heading text-center text-white">
       
-        <span class="site-heading-lower">Home</span>
-      </h1>
+    <span class="site-heading-lower">Facelook</span>
+  </h1>
 
 
-      <div style="text-align: right; margin-right: 10%; color:white">
+  <div style="text-align: right; margin-right: 10%; color:white;">
       
-        {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
           Hola, {{user.username}} / <a href="{% url 'cerrar_sesion' %}" style="color:white">Cerrar sesión</a>
 
-        {% else %}
+    {% else %}
 
-          No estás logueado. <a href="{% url 'login' %}" style="color:white">Iniciar sesión</a> / <a href="{% url 'Autenticacion' %}" style="color:white">Registrarse</a>
+        No estás logueado. <a href="{% url 'login' %}" style="color:white">Iniciar sesión</a> / <a href="{% url 'Autenticacion' %}" style="color:white">Registrarse</a>
 
-        {% endif %}
+    {% endif %}
       
       
-      </div>
+  </div>
 
 
  <!-- Navbar -->
@@ -83,34 +83,14 @@
     <!-- Footer -->
     <footer class="footer text-faded text-center py-5">
       <div class="container">
-        <p class="m-0">
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	        <a href="#" class="link">
-	          <span class="fa-stack fa-lg">
-	            <i class="fa fa-circle fa-stack-2x"></i>
-	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-	          </span>
-	        </a>
-	    </p>
         <p class="m-0 mbt">
         	<a href="sample.html" class="link">Política de privacidad</a> ·
         	<a href="sample.html" class="link">Aviso legal</a> ·
         	<a href="sample.html" class="link">Cookies</a>
-		</p>
+		    </p>
         <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
       </div>
-	</footer>
+	  </footer>
 
     <!-- Bootstrap -->
     <script src="{% static 'FaceLookApp/vendor/jquery/jquery.min.js'%}"></script>
