@@ -61,7 +61,7 @@
          {% if request.session.carro.items %}
 
             <br/>
-            <a href="" class="btn btn-primary submit">Comprar</a>
+            <a href="{% url 'pedidos:procesar_pedido' %}" class="btn btn-primary submit">Comprar</a>
 
          {% endif %}
 
