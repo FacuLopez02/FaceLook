@@ -24,8 +24,8 @@ p {
 }
 
 .site-heading {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   line-height: 1;
   font-family: 'Raleway';
@@ -44,8 +44,8 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .section-heading {
@@ -62,7 +62,7 @@ p {
 
 .section-heading .section-heading-lower {
   display: block;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 100;
 }
 
@@ -130,6 +130,7 @@ p {
     width: 75%;
     float: left;
   }
+
   .intro .intro-text {
     left: 600;
     width: 60%;
@@ -137,12 +138,20 @@ p {
     background-color: rgba(104, 20, 20);
     color: cornsilk;
     position: absolute;
+    
   }
   .intro .intro-text .intro-button {
     width: 100%;
     left: 0;
     position: absolute;
     bottom: -2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .intro .intro-text {
+    background-color: rgba(104, 20, 20);
+    color: white;
   }
 }
 
@@ -153,9 +162,8 @@ p {
 }
 
 .cta {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: rgb(242, 245, 240, 0.4);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .cta .cta-inner {
@@ -249,7 +257,7 @@ p {
 }
 
 .mbt{
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .mbt1{
