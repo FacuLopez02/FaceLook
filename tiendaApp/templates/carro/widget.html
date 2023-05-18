@@ -1,71 +1,48 @@
-<div class="card" align=center>
+<div class="card" style="width: 350px; margin: 0 auto;">
     <div class="card-header bg-success text-white text-center">
         Carro de Compras
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="col">
-                Producto
-            </div>
-            <div class="col">
-                Cantidad
-            </div>
-            <div class="col">
-                Precio
-            </div>
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if request.session.carro.items %}
+                    {% for key,value in request.session.carro.items %}
+                        <tr>
+                            <td>{{value.nombre}}</td>
+                            <td style="text-align:center">{{value.cantidad}}</td>
+                            <td>
+                                <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
+                                <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a>
+                                ${{value.precio}}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center">No hay artículos</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
     </div>
     <div class="card-footer">
-        {% if request.session.carro.items %}
-
-            {% for key,value in request.session.carro.items %}
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            {{value.nombre}}
-                        </div>
-                        <div class="col">
-                            {{value.cantidad}}
-                        </div>
-                        <div class="col">
-                            <a href="{% url 'carro:agregar' value.producto_id %}" class="btn btn-sm btn-success">+</a>
-                            <a href="{% url 'carro:restar' value.producto_id %}" class="btn btn-sm btn-danger">-</a><br/>
-                            
-                            ${{value.precio}}
-                            
-                        </div>
-                    </div>
-                    
-                </div>
-
-            {% endfor %}
-
-        {% else %}
-
-            <div class="row">
-                <div class="col text-center">
-                    No hay artículos
-                </div>
-            </div>
-
-        {% endif %}
-
-        <p>
         <div class="row">
             <div class="col card-header bg-success text-white text-center">
                 Total: ${{importe_total}}
             </div>
-         </div>
-
-         {% if request.session.carro.items %}
-
+        </div>
+        {% if request.session.carro.items %}
             <br/>
-            <a href="{% url 'pedidos:procesar_pedido' %}" class="btn btn-primary submit">Comprar</a>
-
-         {% endif %}
-
+            <div class="row justify-content-center">
+                <a href="{% url 'pedidos:procesar_pedido' %}" class="btn btn-primary">Comprar</a>
+            </div>
+        {% endif %}
     </div>
-
-  </div>
-  
+</div>
