@@ -4,52 +4,31 @@
 
 {% block content %}
 
+<div style="float: right; margin: 1% 1%;">
+    {% if request.user.is_authenticated %}
+        {% include "carro/widget.html" %}
+    {% else %}
+        {% include "carro/widget_error.html" %}
+    {% endif %}
+</div>
+
 <div class="container">
-
-    <div style="float: right; margin: 1% 1%;">
-
-        {% if request.user.is_authenticated %}
-
-            {% include "carro/widget.html" %}
-
-        {% else %}
-            {% include "carro/widget_error.html" %}
-        {% endif %}
-        
-    </div>
-
     <div class="row">
-
         {% for producto in productos %}
-
-            <div class="col-md-3">
-
-
-                <div class="card" style="width: 100%; margin: 5% 5%">
-
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <div class="card" style="width: 100%; margin: 5% 5%;">
                     <img src="{{producto.imagen.url}}" class="card-img-top">
-
-                    <div class="card-body" style = "text-align: center">
-
+                    <div class="card-body" style="text-align: center;">
                         <h7 class="card-title">{{producto.nombre}}</h7>
-                        <p class="card-text">$&nbsp;{{producto.precio}}
-
+                        <p class="card-text">$&nbsp;{{producto.precio}}</p>
                     </div>
-
-                    <div class ="card-footer" style = "text-align: center">
-
-                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
-
+                    <div class="card-footer text-center">
+                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success btn-block">Agregar al carro</a>
                     </div>
-
                 </div>
-            
             </div>
-                
         {% endfor %}
-
     </div>
-
 </div>
 
 {% endblock %}
