@@ -4,55 +4,58 @@
 
 {% block content %}
 
-    <p>
-      <section>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="d-flex align-items-center justify-content-center mb-2">
-                        <span class="mr-2" style="color:white">Categorías:</span>
-                        <div class="btn-group" role="group" aria-label="Categorías">
-                            {% for post in posteos_no_rep %}
-                                {% for categoria in post.categorias.all %}
-                                    <a href="{% url 'categoria' categoria.id %}" class="btn btn-outline-light btn-sm">{{ categoria.nombre }}</a>
+    
+    
+        <p>
+        <section>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="d-flex align-items-center justify-content-center mb-2">
+                            <span class="mr-2" style="color: white">Categorías:</span>
+                            <div class="btn-group" role="group" aria-label="Categorías">
+                                {% for post in posteos_no_rep %}
+                                    {% for categoria in post.categorias.all %}
+                                        <a href="{% url 'categoria' categoria.id %}" class="btn btn-outline-light btn-sm">{{ categoria.nombre }}</a>
+                                    {% endfor %}
                                 {% endfor %}
-                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <br/>
-    {% for post in posteos %}
+        </section>
+        <br/>
 
-            <div class="container">
-                  <div class="card mb-4 mx-auto" style="background-color: white; width: 60%">
+    
+        <br/>
 
-                    <div class="row">
+        {% for post in posteos %}
 
-                        <div class="col-md-6 ">
-                            <img src="{{ post.imagen.url }}" class="card-img" alt="Service Image">
-                        </div>
+                <div class="container">
+                    <div class="card mb-4 mx-auto" style="background-color: rgba(255, 255, 255, 0.8); width: 60%">
 
-                        <div class="col-md-6 d-flex align-items-center">
-                            <div class="card-body">
-                                <h2 class="card-title text-center mb-2">{{ post.titulo }}</h2>
-                                <p class="card-text text-center mb-3">{{ post.contenido }}</p>
+                        <div class="row">
+
+                            <div class="col-md-6 ">
+                                <img src="{{ post.imagen.url }}" class="card-img" alt="Service Image">
+                            </div>
+
+                            <div class="col-md-6 d-flex align-items-center">
+                                <div class="card-body">
+                                    <h2 class="card-title text-center mb-2">{{ post.titulo }}</h2>
+                                    <p class="card-text text-center mb-3">{{ post.contenido }}</p>
+                                </div>
                             </div>
                         </div>
-                      </div>
-                      <div class="card-footer text-center">
-                        <div style="text-align: left; font-size: 80%">Autor: {{ post.autor|upper }}</div>
-                      </div>
-
+                        <div class="card-footer text-center"style= "background-color: rgb(67, 134, 221); color:white;">
+                            <div style="text-align: left; font-size: 80%;">Autor: {{ post.autor|upper }}</div>
+                        </div>
                     </div>
-                  </div>
-              </div>
-
-            <br/>          
+                </div>        
 
 
-    {% endfor %}
-
+        {% endfor %}
+    
+    
 {% endblock %}
