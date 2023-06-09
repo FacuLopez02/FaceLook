@@ -8,7 +8,7 @@
     <br/>
         {% for servicio in servicios %}
 
-            <div class="card mb-4 mx-auto" style="background-color: white; width: 50%">
+            <div class="card mb-4 mx-auto" style="background-color: rgba(255, 255, 255, 0.9); width: 60%">
                 <div class="row">
                     <div class="col-md-5">
                         <img src="{{ servicio.imagen.url }}" class="card-img" alt="Service Image">
@@ -20,8 +20,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer text-center">
-                    <a href="#" class="btn btn-primary">Ver más</a>
+                <div class="card-footer text-center" style="background-color: rgba(128, 33, 33, 0.9);">
+                    <a href="#" class="btn btn-danger">Ver más</a>
                 </div>
             </div>
         {% endfor %}
