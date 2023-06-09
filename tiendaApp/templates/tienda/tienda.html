@@ -4,30 +4,76 @@
 
 {% block content %}
 
-<div style="float: right; margin: 1% 1%;">
-    {% if request.user.is_authenticated %}
-        {% include "carro/widget.html" %}
-    {% else %}
-        {% include "carro/widget_error.html" %}
-    {% endif %}
-</div>
+<style>
+    .card-img-top {
+        max-height: 200px;
+        object-fit: cover;
+    }
 
-<div class="container">
-    <div class="row">
-        {% for producto in productos %}
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                <div class="card" style="width: 100%;height: 450px; margin: 5% 5%;">
+    .btn-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .widget{
+        margin: 5px 0%;
+    }
+
+    @media (max-width: 1200px){
+        .nombre-prod{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    @media (min-width: 992px){
+        .widget{
+            float:right;
+            margin: 5px 20px;
+        }
+    }
+
+    .card.productos{
+        height: 390px; 
+        margin: 2% 0%;
+    }
+
+    @media (max-width: 768px){
+        .card.productos{
+            width: 300px;
+            margin: 5px auto;
+        }
+    }
+
+</style>
+<div>
+    <div class="widget">
+        {% if request.user.is_authenticated %}
+            {% include "carro/widget.html" %}
+        {% else %}
+            {% include "carro/widget_error.html" %}
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for producto in productos %}
+            <div class="col-xl-3 col-lg-4 col-md-4 col-12">
+                <div class="card productos">
                     <img src="{{producto.imagen.url}}" class="card-img-top">
-                    <div class="card-body" style="text-align: center;">
-                        <h7 class="card-title">{{producto.nombre}}</h7>
-                        <p class="card-text">$&nbsp;{{producto.precio}}</p>
+                    <div class="card-body text-center">
+                        <h6 class="card-title nombre-prod"><strong>{{producto.nombre}}</strong></h6>
+                        <h6 class="card-text"><strong>$&nbsp;{{producto.precio}}</strong></h6>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success btn-block">Agregar al carro</a>
+                        <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success btn-block btn-text">Agregar al carro</a>
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 
