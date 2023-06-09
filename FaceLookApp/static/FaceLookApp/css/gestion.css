@@ -299,10 +299,40 @@ ul.errorlist{
 
 .formsContacto{
 
-  background-color: rgba(104, 20, 20);
+  background-color: rgba(104, 20, 20, 0.8);
   width: 50%;
   margin: 10px auto;
   border-radius: 5px;
   padding: 1% 0%;
 
+}
+
+.table-responsive.no-border {
+  overflow-x: auto;
+}
+
+.table-responsive.no-border table {
+  border-collapse: collapse;
+}
+
+.table-responsive.no-border table,
+.table-responsive.no-border th,
+.table-responsive.no-border td {
+  border: none;
+}
+
+.card.responsive {
+  width: 550px; /* Ancho predeterminado */
+}
+
+@media (max-width: 768px) {
+  .card.responsive {
+      width: 460px !important; /* Ancho para ventanas de hasta 768px */
+  }
+}
+
+@media (max-width: 576px) {
+  .card.responsive {
+      width: 350px; /* Ancho para ventanas de hasta 576px */
+  }
 }
