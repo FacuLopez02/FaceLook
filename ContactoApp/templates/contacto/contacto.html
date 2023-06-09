@@ -5,31 +5,45 @@
 {% block content %}
 
     {% if "no_valido" in request.GET %}
-        <div class = "formsContacto" align=center>
-            <p style="color: white; width:50%; margin: 20px auto" align=center> No se pudo enviar la informacion. Intente nuevamente mas tarde.</p>
+        <div class = "formsContacto">
+            <p style="color: white; width:50%; margin: 20px auto"> No se pudo enviar la informacion. Intente nuevamente mas tarde.</p>
         </div>
 
     {% endif %}
 
     {% if "valido" in request.GET %}
-        <div class = "formsContacto" align=center>
-            <p style="color: white; width:50%; margin: 20px auto" align=center> Informacion enviada correctamente!!</p>
+        <div class = "formsContacto">
+            <p style="color: white; width:50%; margin: 20px auto"> Informacion enviada correctamente!!</p>
         </div>
     
     {% else %}
 
-    <div class = "formsContacto">
-
-        
-
-        <form action="" method="POST" style="text-align: center">
-            {% csrf_token %%}
-            <table style="color:white; margin: 20px auto">{{formulario.as_table}}</table>
-        
-            <input type="submit" value="Enviar" style="width:150px">
-
+    <br/>
+    
+    <div class="card responsive mx-auto" style="background-color: rgba(255, 255, 255, 0.9);">
+        <form action="" method="POST" style="margin-bottom: 0;">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="table-responsive no-border">
+                    <div>
+                        <table class="table">
+                            {{formulario.as_table}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-center" style="background-color: rgba(128, 33, 33, 0.9); color:white; margin-bottom: 0;">
+                <input type="submit" value="Enviar" class="btn btn-danger">
+            </div>
         </form>
     </div>
+    
+    
+    <br/>
+    
+    
+    
+       
 
     {% endif %}
 
